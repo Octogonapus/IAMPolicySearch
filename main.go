@@ -252,13 +252,13 @@ func searchResource(ctx context.Context, iamClient *iam.Client, action string, r
 					break
 				}
 				for _, group := range out2.PolicyGroups {
-					fmt.Printf("\tis attached to group: %s %s\n", *group.GroupId, *group.GroupName)
+					fmt.Printf("\tis attached to group: Name=%s Id=%s\n", *group.GroupName, *group.GroupId)
 				}
 				for _, role := range out2.PolicyRoles {
-					fmt.Printf("\tis attached to role: %s %s\n", *role.RoleId, *role.RoleName)
+					fmt.Printf("\tis attached to role: Name=%s Id=%s\n", *role.RoleName, *role.RoleId)
 				}
 				for _, user := range out2.PolicyUsers {
-					fmt.Printf("\tis attached to user: %s %s\n", *user.UserId, *user.UserName)
+					fmt.Printf("\tis attached to user: Name=%s Id=%s\n", *user.UserName, *user.UserId)
 				}
 				if out2.IsTruncated {
 					marker = out2.Marker
